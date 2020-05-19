@@ -1,0 +1,25 @@
+{
+  "name": "new-gulp",
+  "version": "1.0.0",
+  "description": "Gulp Configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharomet/new-gulp.git"
+  },
+  "keywords": [],
+  "author": "Alexander Sharomet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharomet/new-gulp/issues"
+  },
+  "homepage": "https://github.com/sharomet/new-gulp#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.2.2"
+  }
+}
