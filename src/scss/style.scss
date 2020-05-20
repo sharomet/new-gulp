@@ -1,6 +1,20 @@
+@import "include/global";
+@import "include/header";
+
+
+.test {
+	background-image: url('../img/image.jpg');
+}
 .div {
 	.main {
-		color: red;
+		@media(max-width: 767px) {
+			color: red;
+		}
 	}
 }
 
+@media(max-width: 767px) {
+	.main2 {
+		color: blue;
+	}
+}
