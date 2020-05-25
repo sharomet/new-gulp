@@ -42,7 +42,7 @@ let { src, dest } = require('gulp'),
 	imagemin = require('gulp-imagemin'),
 	webp = require('gulp-webp'),
 	webphtml = require('gulp-webp-html');
-	//webpcss = require('gulp-webpcss');
+	webpcss = require('gulp-webpcss');
 
 
 function browSersync(params) {
@@ -84,7 +84,10 @@ function css() {
 			overrideBrowserslist: ['last 5 versions'],
 			cascade: true
 		}))
-		//.pipe(webpcss())
+		.pipe(webpcss({
+			webpClass: '.webp',
+			noWebpClass: '.no-webp'
+		}))
 		.pipe(dest(path.build.css))
 		.pipe(cleanCss())
 		.pipe(rename({
