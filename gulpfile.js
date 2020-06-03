@@ -47,8 +47,9 @@ let { src, dest } = require('gulp'),
 	svgSprite = require('gulp-svg-sprite'),
 	ttf2woff = require('gulp-ttf2woff'),
 	ttf2woff2 = require('gulp-ttf2woff2'),
-	fonter = require('gulp-fonter')
-	removeHtmlComments = require('gulp-remove-html-comments');;
+	fonter = require('gulp-fonter'),
+	removeHtmlComments = require('gulp-remove-html-comments'),
+	htmlbeautify = require('gulp-html-beautify');
 
 
 function browSersync(params) {
@@ -99,6 +100,7 @@ function html() {
 		.pipe(fileInclude())
 		.pipe(webphtml())
 		.pipe(removeHtmlComments())
+		.pipe(htmlbeautify())
 		.pipe(dest(path.build.html))
 		.pipe(browsersync.stream());
 }
