@@ -49,7 +49,8 @@ let { src, dest } = require('gulp'),
 	ttf2woff2 = require('gulp-ttf2woff2'),
 	fonter = require('gulp-fonter'),
 	removeHtmlComments = require('gulp-remove-html-comments'),
-	htmlbeautify = require('gulp-html-beautify');
+	htmlbeautify = require('gulp-html-beautify'),
+	wait = require('gulp-wait');
 
 
 function browSersync(params) {
@@ -109,6 +110,7 @@ function html() {
 
 function css() {
 	return src(path.src.css)
+		.pipe(wait(200))
 		.pipe(scss({
 			outputStyle: 'expanded'
 		}))
