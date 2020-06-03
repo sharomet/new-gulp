@@ -100,7 +100,9 @@ function html() {
 		.pipe(fileInclude())
 		.pipe(webphtml())
 		.pipe(removeHtmlComments())
-		.pipe(htmlbeautify())
+		.pipe(htmlbeautify(
+			indent_size: 2
+		))
 		.pipe(dest(path.build.html))
 		.pipe(browsersync.stream());
 }
