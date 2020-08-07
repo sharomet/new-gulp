@@ -102,7 +102,7 @@ function html() {
 		.pipe(webphtml())
 		.pipe(removeHtmlComments())
 		.pipe(htmlbeautify(
-			indent_size: 2
+			//indent_size: 2
 		))
 		.pipe(dest(path.build.html))
 		.pipe(browsersync.stream());
@@ -207,7 +207,8 @@ gulp.task('svgSprite', function() {
 });
 
 let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts), fontsStyle);
-let watch = gulp.parallel(build, watchFiles, browSersync);
+//let watch = gulp.parallel(build, watchFiles, browSersync);
+let watch = gulp.series(build, gulp.parallel(browserSync, watchFiles));
 
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;
